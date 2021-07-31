@@ -14,6 +14,7 @@
   <body onload=brython()>
     <script type="text/python">
         from browser import document, alert
+        print("Hello World")
         def greet(event):
             alert("Hello " + document["name-box"].value + "!")
         document["greet-button"].bind("click", greet)
