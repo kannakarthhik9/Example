@@ -1,9 +1,25 @@
 <html>
-  <head>
+<!--  <head>
     <title>Example Page</title>
   </head>
   <body>
     <h1>Welcome to my page</h1>
     <a href="m.html"><button>Go To Login</button></a>
-  </body>
+  </body>-->
+  <head>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.7.5/brython.min.js">
+    </script>
+</head>
+  <body onload=brython()>
+    <script type="text/python">
+        from browser import document, alert
+        def greet(event):
+            alert("Hello " + document["name-box"].value + "!")
+        document["greet-button"].bind("click", greet)
+    </script>
+
+    <input id="name-box" placeholder="Enter your name">
+    <button id="greet-button">Say Hello</button>
+</body>
 </html>
